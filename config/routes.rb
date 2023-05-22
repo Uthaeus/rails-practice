@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :posts
-  get 'home', to: 'pages#home'
+  root 'pages#home'
   get 'options', to: 'pages#options'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
