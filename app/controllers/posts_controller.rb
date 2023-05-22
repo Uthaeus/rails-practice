@@ -9,6 +9,8 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments = Comment.all.where(post_id: @post.id).order("created_at DESC")
+    @comment = Comment.new
   end
 
   # GET /posts/new

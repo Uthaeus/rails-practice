@@ -5,6 +5,7 @@
   <%= render @post %>
 
   <p><%= @post.user_id%></p>
+  <p>current user: <%= current_user.id %></p>
 
   <i id='like-heart' class="bi bi-balloon-heart"></i>
 
@@ -12,6 +13,12 @@
   <p class='test-output'>
     
   </p>
+
+  <div>
+    <%= render partial: "post_comment_form", locals: {comment: @comment, postID: @post.id} %>
+    <h2>Comments</h2>
+    <%= render @comments %>
+  </div>
 
   <div class='post-show-actions'>
 
