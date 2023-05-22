@@ -139,6 +139,8 @@ GEM
     nokogiri (1.15.1-x86_64-darwin)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    petergate (3.0.0)
+      activerecord (> 4.0.0)
     pg (1.5.3)
     public_suffix (5.0.1)
     puma (5.6.5)
@@ -233,6 +235,7 @@ DEPENDENCIES
   jbuilder
   jsbundling-rails
   mini_magick (~> 4.12)
+  petergate (~> 3.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.3)

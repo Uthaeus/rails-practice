@@ -68,5 +68,7 @@ group :development do
 end
 
 gem 'devise', '~> 4.9', '>= 4.9.2'
+gem 'petergate', '~> 3.0'
+
 gem 'carrierwave', '~> 2.2', '>= 2.2.3'
 gem 'mini_magick', '~> 4.12'
