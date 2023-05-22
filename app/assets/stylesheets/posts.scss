@@ -1,0 +1,48 @@
+
+
+
+
+// Post Detail
+
+.post-show-container {
+    width: 100%;
+    min-height: calc(100vh - 150px);
+    position: relative;
+
+    .post-show-actions {
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        justify-content: flex-end;
+        position: absolute;
+        bottom: 0;
+
+        .post-show-link {
+            margin-left: 2rem;
+            font-size: 1.2em;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        .edit {
+            color: #00b5ad;
+        }
+
+        .back {
+            color: #1c67f2;
+        }
+
+        .delete-btn {
+            color: #db2828;
+            border: none;
+            background: none;
+            text-decoration: underline;
+
+        }
+    }
+
+}

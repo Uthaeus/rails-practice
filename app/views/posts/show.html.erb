@@ -1,24 +1,42 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
+<div class='post-show-container'>
 
-<i class="bi bi-balloon-heart"></i>
+  <%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
+  <p><%= @post.user_id%></p>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
+  <i id='like-heart' class="bi bi-balloon-heart"></i>
+
+  <button class='test-btn'>Test Button</button>
+  <p class='test-output'>
+    
+  </p>
+
+  <div class='post-show-actions'>
+
+    <% if logged_in?(:site_admin) || @post.user_id == current_user.id %>
+      <%= link_to "Edit this post", edit_post_path(@post), class: "post-show-link edit" %>
+      <%= button_to "Destroy this post", @post, method: :delete, class: "post-show-link delete-btn" %>
+    <% end %>
+
+    <%= link_to "Back to posts", posts_path, class: "post-show-link back" %>
+
+  </div>
 </div>
 
 <script>
-  
-  const icon = document.querySelector("i");
+  let heart = document.querySelector('#like-heart');
+  let testBtn = document.querySelector('.test-btn');
+  let testOut = document.querySelector('.test-output');
+  let count = 0;
 
-  icon.addEventListener("click", () => {
-    console.log("clicked");
-    icon.classList.remove("bi-balloon-heart");
-    void icon.offsetWidth;
-    icon.classList.add("bi-ballon-heart-fill");
+  testBtn.addEventListener('click', () => {
+    count += 1;
+    console.log('test');
+    testOut.innerHTML = count;
+    heart.classList.add('bi-balloon-heart-fill');
+    void heart.offsetWidth;
+    heart.classList.remove('bi-balloon-heart');
   });
 </script>
